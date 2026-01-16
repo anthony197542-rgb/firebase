@@ -1,26 +1,25 @@
 import './App.css';
-import { createUserWithEmailAndPassword } from './firebase/init';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase/init';
 
 function App() {
   function register() {
-    createUserWithEmailAndPassword(auth, 'email@email.com', 'test123');
-  .then((user) => {
-    console.log(user)
-  })
-  .catch((error) => {
-    console.log(error);
-
-  })
+    createUserWithEmailAndPassword(auth, 'email@email.com', 'test123')
+      .then((user) => {
+        console.log(user)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
-  functtion NavigatorLogin() {
+  function NavigatorLogin() {
     
   }
+  
   return (
-
     <div className="App">
-      <button onclick={register}>Register</button>
-
+      <button onClick={register}>Register</button>
     </div>
   );
 }
